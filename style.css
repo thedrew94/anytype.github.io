@@ -7,34 +7,61 @@
 }
 
 html {
-  font-size: 31.25%;
+  font-size: 62.5%;
 }
 
 body {
-  padding: 1rem;
+  padding: 1rem 3rem;
   box-sizing: border-box;
 }
 
 /* HEADER DESIGN */
+
 header {
   max-width: 100%;
+  height: 8rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.1rem;
+}
+
+.logo-container_logo {
+  width: 3rem;
+  height: 3rem;
+  background-image: url(./img/icon.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.logo-container_logo-text {
+  width: 13rem;
+  height: 3rem;
+  background-image: url(./img/logo.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
 .menu-container {
-  width: 7rem;
-  height: 7rem;
+  width: 4rem;
+  height: 4rem;
+  background-color: black;
   border: none;
   border-radius: 1rem;
-  background-color: black;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 0.8rem;
+  gap: 0.4rem;
 }
 
 .menu-container .line {
@@ -43,51 +70,31 @@ header {
   border-radius: 1rem;
 }
 
-/* PAGE CONTENT / FIRST SECTION */
+/* SECTION DESIGN / FIRST PAGE DESIGN */
 
 .first-section {
-  margin-top: 2.7rem;
   max-width: 100%;
-  height: 110rem;
+  height: 50rem;
   border: 0.5rem solid black;
-  border-radius: 5rem 5rem 1rem 1rem;
+  border-radius: 5rem;
 
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-}
 
-.first-section span:first-child {
-  margin: 7rem auto;
-  font-size: 2.4rem;
-}
-
-.first-section span:nth-child(2) {
-  margin: 2.1rem auto;
-  font-size: 4.1rem;
-}
-
-.first-section_img-container {
-  width: 100%;
-  height: 63rem;
-  padding: 10rem;
-  background-image: url(./img/phoneImg.png);
+  background-image: url(./img/fv_bg.png);
+  background-size: cover;
+  background-position: top;
   background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
 }
 
-/* .first-section_img-container img {
-  width: 100%;
-  height: 63rem;
-} */
+.first-section img:first-child {
+  margin-top: 3rem;
+  width: 70%;
+}
 
-/* PAGE CONTENT / FIRST SECTION */
-
-/* .first-page {
-  display: flex;
-  flex-direction: column;
-  max-width: 100%;
-  height: 111rem;
-  animation: moveRight 3s linear infinite;
-} */
+.first-section img:last-child {
+  margin-top: auto;
+  width: 60%;
+}
