@@ -36,3 +36,4 @@ const dragging = (e) => {
 carousel.addEventListener("mousedown", dragStart);
 carousel.addEventListener("mouseup", dragStop);
 carousel.addEventListener("mousemove", dragging);
+
