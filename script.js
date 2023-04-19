@@ -1,39 +1,31 @@
 "use strict";
 
 const carousel = document.querySelector(".carousel");
-const arrowIcons = document.querySelectorAll(".wrapper");
-const firstImg = carousel.querySelectorAll("img")[0];
-let firstImgWidth = firstImg.clientWidth + 14;
-
-arrowIcons.forEach((icon) => {
-  icon.addEventListener("click", () => {
-    carousel.scrollLeft += icon.id == "left" ? -firstImgWidth : firstImgWidth;
-  });
-});
 
 let isDragStart = false,
   prevPageX,
   prevScrollLeft;
 
-const dragStart = (e) => {
+const dragStart = function (event) {
   isDragStart = true;
-  prevPageX = e.pageX;
+  prevPageX = event.pageX;
   prevScrollLeft = carousel.scrollLeft;
 };
 
-const dragStop = () => {
+const dragStop = function (event) {
   isDragStart = false;
 };
 
-const dragging = (e) => {
+const dragging = function (event) {
   if (!isDragStart) return;
-  e.preventDefault();
-  console.log(e.pageX);
-  let positionDiff = e.pageX - prevPageX;
+  event.preventDefault();
+  let positionDiff = event.pageX - prevPageX;
   carousel.scrollLeft = prevScrollLeft - positionDiff;
+  console.log(event.pageX);
 };
 
 carousel.addEventListener("mousedown", dragStart);
 carousel.addEventListener("mouseup", dragStop);
+carousel.addEventListener("mouseleave", dragStop);
 carousel.addEventListener("mousemove", dragging);
 
