@@ -1,13 +1,85 @@
+/* GLOBAL STYLE RESET */
 :root {
-  /* variables */
+  --custom-color1: rgb(243, 243, 243);
+}
+
+*:where(
+    :not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)
+  ) {
+  all: unset;
+  display: revert;
 }
 
 *,
-*::after,
-*::before {
-  margin: 0;
-  padding: 0;
-  box-sizing: inherit;
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+a,
+button {
+  cursor: revert;
+}
+
+ol,
+ul,
+menu {
+  list-style: none;
+}
+
+img {
+  max-inline-size: 100%;
+  max-block-size: 100%;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+input,
+textarea {
+  -webkit-user-select: auto;
+}
+
+textarea {
+  white-space: revert;
+}
+
+meter {
+  -webkit-appearance: revert;
+  appearance: revert;
+}
+
+:where(pre) {
+  all: revert;
+}
+
+::placeholder {
+  color: unset;
+}
+
+::marker {
+  content: initial;
+}
+
+:where([hidden]) {
+  display: none;
+}
+
+:where([contenteditable]:not([contenteditable="false"])) {
+  -moz-user-modify: read-write;
+  -webkit-user-modify: read-write;
+  overflow-wrap: break-word;
+  -webkit-line-break: after-white-space;
+  -webkit-user-select: auto;
+}
+
+:where([draggable="true"]) {
+  -webkit-user-drag: element;
+}
+
+:where(dialog:modal) {
+  all: revert;
 }
 
 html {
@@ -15,384 +87,200 @@ html {
   font-family: "Noto Sans JP", sans-serif;
 }
 
-body {
-  padding: 1rem 3rem;
-  box-sizing: border-box;
+
+
+
+/* CUSTOM CLASSES / CUSTOM COMPONENTS */
+
+.underline {
+  box-shadow: inset 0 -0.6rem rgba(235, 231, 15, 1);
 }
 
-@media only screen and (max-width: 768px) {
-  /* HEADER DESIGN */
+/* DESKTOP DESIGN / DESKTOP VERSION */
 
-  header {
-    max-width: 100%;
-    height: 8rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+body {
+  min-width: 90rem;
+  width: 100vw;
+  min-height: 75rem;
+  height: 100vh;
+  position: absolute;
+  overflow-x: hidden;
+}
+
+.webpage {
+  position: fixed;
+
+  min-width: 90rem;
+  min-height: 75rem;
+  width: 100vw;
+  height: 100vh;
+  background-image: url(./Img/backgroundBig.png);
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  display: grid;
+  grid-template-columns: 1fr 39rem 1fr;
+}
+
+aside:first-child {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+
+  width: auto;
+}
+
+/* DESIGN LEFT SIDE WEBPAGE */
+
+.aside-left_logo img:first-child {
+  margin-top: 3.5rem;
+  margin-left: 3.5rem;
+  width: 4%;
+}
+
+.aside-left_logo img:last-child {
+  width: 20%;
+}
+
+.aside-left_logo2 {
+  margin: auto;
+}
+
+.aside-left_logo2 img {
+  object-fit: contain;
+}
+
+.aside-left_download-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin: auto;
+  background-color: var(--custom-color1);
+  width: 82%;
+  height: 20%;
+  border: 0.5rem solid black;
+  border-radius: 3rem;
+
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.aside-left_download-btn img {
+  margin-right: 1rem;
+  min-width: 3rem;
+  width: 10%;
+}
+
+/* DESIGN RIGHT SIDE WEBPAGE */
+
+.aside-right {
+  display: grid;
+  grid-template-rows: 1;
+  row-gap: 2rem;
+
+  width: 100%;
+  height: 100%;
+}
+
+.aside-right_title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--custom-color1);
+  justify-self: center;
+  align-self: last baseline;
+}
+
+.aside-right_content {
+  padding: 1rem;
+
+  justify-self: center;
+  align-self: baseline;
+  background-color: #f3f3f3;
+  width: 82%;
+  height: 45%;
+  border: 0.5rem solid black;
+  border-radius: 4rem;
+
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 3.2rem;
+}
+
+/* MAIN WEBPAGE DESIGN / CENTER PART */
+
+main {
+  margin: auto;
+  position: relative;
+  min-width: 39rem;
+  width: 39rem;
+  background-color: var(--custom-color1);
+}
+
+/* REFACTOR CODE FROM HERE */
+
+.menu {
+  width: 4rem;
+  height: 4rem;
+  background-color: black;
+  border: none;
+  border-radius: 1rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.menu .line {
+  width: 3rem;
+  border: 0.1rem solid white;
+  border-radius: 1rem;
+}
+
+.main-content {
+  margin: auto;
+  width: 35rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-content .aside-left_download-btn {
+  width: 100%;
+  margin-top: 3rem;
+}
+
+.elementOne {
+  margin-top: 3rem;
+  width: 90%;
+  height: 9rem;
+  border-radius: 1rem;
+  background-color: #ff7600;
+}
+
+@media only screen and (max-width: 70rem) {
+  .webpage {
+    /* default is 1 */
+    opacity: 0;
+    /* default is visible */
+    visibility: hidden;
   }
 
-  .logo-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0.1rem;
+  body {
+    margin: auto;
+    min-width: 37rem;
+    max-width: 37rem;
+    width: 37rem;
   }
 
-  .logo-container_logo {
-    width: 3rem;
-    height: 3rem;
-    background-image: url(./img/icon.svg);
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-  }
-
-  .logo-container_logo-text {
-    width: 13rem;
-    height: 3rem;
-    background-image: url(./img/logo.svg);
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-  }
-
-  .menu-container {
-    width: 4rem;
-    height: 4rem;
-    background-color: black;
-    border: none;
-    border-radius: 1rem;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 0.4rem;
-  }
-
-  .menu-container .line {
-    width: 3rem;
-    border: 0.1rem solid white;
-    border-radius: 1rem;
-  }
-
-  /* SECTION DESIGN / FIRST PAGE DESIGN */
-
-  .first-section {
-    max-width: 100%;
-    height: 55rem;
-    border: 0.5rem solid black;
-    border-radius: 5rem;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    background-image: url(./img/fv_bg.png);
-    background-size: cover;
-    background-position: bottom;
-    background-repeat: no-repeat;
-  }
-
-  .first-section img:first-child {
-    margin-top: 3rem;
-    width: 25rem;
-  }
-
-  .first-section img:last-child {
-    margin-top: auto;
-    width: 22rem;
-  }
-
-  /* SECTION DESIGN / SECOND PAGE DESIGN */
-
-  .second-section {
-    max-width: 100%;
-    height: auto;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .download-btn {
-    margin-top: 5rem;
-    width: 100%;
-    height: 5rem;
-    border: 0.4rem solid black;
-    border-radius: 5rem;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-  }
-
-  .download-btn .download-btn_icon {
-    height: 3.4rem;
-    width: 3.4rem;
-    background-image: url(./img/download-icon.png);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-  }
-
-  .download-btn .download-btn_text {
-    font-size: 1.2rem;
-    font-weight: bold;
-  }
-
-  .download-content {
-    margin-top: 2rem;
-    width: 85%;
-    height: 16rem;
-    background-color: #00ccf5;
-    border-radius: 1.5rem;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .download-content .download-content_icon {
-    margin-left: 1rem;
-    height: 80%;
-    width: 13rem;
-    background-image: url(./img/userPhone.png);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-  }
-
-  .download-content .download-content_text {
-    margin-right: 1rem;
-    margin-left: 1rem;
-    font-weight: bold;
-  }
-
-  .text1 {
-    font-size: 1.2rem;
-  }
-
-  .text2 {
-    font-size: 3.4rem;
-  }
-
-  .text3 {
-    font-size: 2rem;
-  }
-
-  .download-howtouse {
-    width: 100%;
-    position: relative;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .download-howtouse_background img {
-    position: absolute;
-    z-index: -1;
-    top: 150%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80%;
-    height: auto;
-  }
-
-  .download-howtouse_text-content {
-    text-align: center;
-    font-size: 2rem;
-    font-weight: bold;
-  }
-
-  .download-howtouse_text-content p:first-child {
-    margin-top: 4rem;
-    font-weight: lighter;
-    color: #0b83de;
-  }
-
-  .line-decoration {
-    margin: 2.6rem auto;
-    width: 25%;
-    border: 0.1rem solid #0b83de;
-  }
-
-  .download-howtouse_text-content p:last-child {
-    margin-top: 1rem;
-    font-size: 3rem;
-  }
-
-  /* SECTION DESIGN / THIRD PAGE DESIGN */
-
-  .third-section {
-    max-width: 100%;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .top-text-container {
-    margin-top: 12rem;
-    font-weight: bold;
-    text-align: center;
-    color: #0b83de;
-  }
-
-  .top-text-container p:first-child {
-    font-size: 1.8rem;
-    line-height: 2.8rem;
-  }
-
-  .top-text-container span {
-    font-size: 4rem;
-  }
-
-  .top-text-container p:last-child {
-    color: black;
-    font-size: 4rem;
-    margin-bottom: 3rem;
-  }
-
-  .wrapper {
-    margin-top: 2rem;
-
-    position: relative;
-    width: 100%;
-    height: 30rem;
-
-    border: 0.1rem solid black;
-    border-radius: 50%;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-  }
-
-  .carousel {
-    cursor: pointer;
-    white-space: nowrap;
-    overflow: hidden;
-  }
-
-  .carousel img {
-    margin-left: 1rem;
-    width: calc(100% / 1);
-    height: 20rem;
-    object-fit: contain;
-  }
-
-  .carousel img:first-child {
-    margin-left: 0;
-  }
-
-  .bottom-text-container {
-    margin-top: 3rem;
-    font-size: 2rem;
-    font-weight: bold;
-    text-align: center;
-  }
-
-  .bottom-text-container p:first-child {
-    margin-bottom: 5rem;
-  }
-
-  .bottom-text-container_text {
-    margin: 5rem auto;
-    padding: 1rem;
-    width: 90%;
-    border: 0.5rem solid black;
-    border-radius: 3rem;
-
-    font-size: 2rem;
-  }
-
-  /* SECTION DESIGN / FORTH PAGE DESIGN */
-
-  .forth-section {
-    max-width: 100%;
-    height: 100rem;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-
-    background-image: url(./img/job_bg.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-
-  /* SECTION DESIGN / FIFTH PAGE DESIGN */
-
-  .fifth-section {
-    max-width: 100%;
-    height: 100rem;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-
-    background-image: url(./img/reward_bg.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-
-  /* FOOTER */
-
-  .footer {
-    position: relative;
-
-    width: 100%;
-    height: 71rem;
-    background-color: #000;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .footer_left-content {
-    font-size: 1.6rem;
-    color: #fff;
-  }
-
-  .footer_left-content ul li {
-    list-style: none;
-    font-weight: 400;
-    margin: 4.2rem 6rem;
-  }
-
-  .footer_right-content {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    top: 6rem;
-    right: 6rem;
-  }
-
-  .footer_right-content button {
-    width: 2rem;
-    height: 2rem;
-    background-color: #fff;
-    border: none;
-    border-radius: 0.2rem;
-  }
-
-  .footer_right-content span {
-    font-size: 1rem;
-    color: #fff;
+  main {
+    margin: auto;
+    max-width: 37rem;
+    width: 37rem;
   }
 }
