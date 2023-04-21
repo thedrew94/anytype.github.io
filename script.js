@@ -43,3 +43,12 @@ carousel.addEventListener("touchmove", dragging);
 //     document.body.appendChild(webpage);
 //   }
 // });
+
+const menuBtn = document.querySelectorAll(".menu");
+const navigationMenu = document.querySelector("nav");
+
+menuBtn.forEach((menu) => {
+  menu.addEventListener("click", function () {
+    navigationMenu.classList.toggle("display-hide");
+  });
+});
