@@ -1,7 +1,3 @@
-/* GLOBAL STYLE RESET */
-:root {
-@import url("styleReset.css");
-
 :root {
   --custom-color1: rgb(243, 243, 243);
 }
@@ -51,46 +47,76 @@ aside:first-child {
 .aside-left_logo img:first-child {
   margin-top: 3.5rem;
   margin-left: 3.5rem;
-  width: 4%;
+  width: 1.4rem;
+  height: 0.95rem;
 }
 
 .aside-left_logo img:last-child {
-  width: 20%;
+  width: 6.2rem;
+  height: 0.9rem;
 }
 
 .aside-left_logo2 {
   margin: auto;
+  width: 18.6rem;
+  height: 8.5rem;
 }
 
 .aside-left_logo2 img {
-  object-fit: contain;
+  width: 18.6rem;
+  height: 8.5rem;
 }
 
 .aside-left_download-btn {
+  margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
-
-  margin: auto;
+  gap: 1rem;
   background-color: var(--custom-color1);
-  width: 82%;
-  height: 20%;
+  width: 31.5rem;
+  height: 5.9rem;
   border: 0.5rem solid black;
   border-radius: 3rem;
 
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: bold;
 }
 
-.aside-left_download-btn:hover {
-  color: white;
-  background-color: black;
+.first {
+  min-width: 3rem;
+  width: 5%;
 }
 
-.aside-left_download-btn img {
+.second {
+  display: none;
+  visibility: hidden;
+  opacity: 0;
+  min-width: 3rem;
+  width: 5%;
+}
+
+/* .aside-left_download-btn img {
   margin-right: 1rem;
   min-width: 3rem;
-  width: 10%;
+  width: 5%;
+} */
+
+.aside-left_download-btn:hover .first {
+  display: none;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.aside-left_download-btn:hover .second {
+  display: block;
+  visibility: visible;
+  opacity: 1;
+}
+
+.aside-left_download-btn:hover {
+  background-color: black;
+  color: white;
 }
 
 /* DESIGN RIGHT SIDE WEBPAGE */
@@ -142,13 +168,24 @@ main {
 /* REFACTOR CODE FROM HERE */
 
 header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   margin: auto;
   width: 90%;
 }
 
+.anytype-logo {
+  margin: 3.5rem 0rem 2.5rem 0rem;
+  justify-self: left;
+  width: 10.1rem;
+  height: 1.2rem;
+}
+
 .menu {
-  width: 4rem;
-  height: 4rem;
+  margin: 2.3rem 1rem 1.3rem 0rem;
+  justify-self: right;
+  width: 3.5rem;
+  height: 3.5rem;
   background-color: black;
   border: none;
   border-radius: 1rem;
@@ -161,7 +198,7 @@ header {
 }
 
 .menu .line {
-  width: 3rem;
+  width: 2rem;
   border: 0.1rem solid white;
   border-radius: 1rem;
 }
@@ -179,21 +216,22 @@ header {
 }
 
 .elementOne {
-  margin: 3rem auto;
-  width: 90%;
-  height: 9rem;
-  border-radius: 1rem;
-  background-color: #ff7600;
+  margin: 0.7rem auto;
+  width: 26.5rem;
+  height: 8rem;
+  border-radius: 0.5rem;
 }
 
 .textOne {
+  margin-top: 5.3rem;
   color: #0b83de;
-  font-size: 1.7rem;
+  font-size: 1.5rem;
 }
 
 .textTwo {
-  font-size: 1.9rem;
-  font-weight: 400;
+  margin-top: 2.9rem;
+  font-size: 1.7rem;
+  font-weight: bold;
 }
 
 .textThree {
@@ -204,47 +242,52 @@ header {
 
 .elementTwo {
   position: relative;
-  width: 100%;
-  height: 10rem;
+  top: 4.8rem;
+  left: auto;
+  width: 25.6rem;
+  height: 8.8rem;
 }
 
 .elementTwo img {
   position: absolute;
+  width: 25.6rem;
+  height: 8.8rem;
   top: 0;
   left: 0;
 }
 
 .textFour {
   color: #0b83de;
-  font-size: 2.5rem;
-  line-height: 3.3rem;
+  font-size: 1.5rem;
+  line-height: 1.3rem;
 }
 
 .textFour span {
-  font-size: 5.5rem;
+  font-size: 5rem;
+  line-height: 3.5rem;
 }
 
 .textFive {
-  font-size: 3rem;
+  margin-top: 0.6rem;
+  font-size: 2.3rem;
+  line-height: 1.9rem;
   font-weight: bold;
 }
 
 /* SLIDER DESIGN */
 
 .wrapper {
-  margin-top: 2rem;
+  margin: auto;
+  margin-top: 2.5rem;
 
   position: relative;
   width: 100%;
-  height: 30rem;
-
-  border: 0.1rem solid black;
+  height: 21.5rem;
   border-radius: 50%;
 
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
 }
 
 .carousel {
@@ -267,36 +310,42 @@ header {
 /* ///////////////////////////////////////////////// */
 
 .textSix {
-  margin-top: 4.6rem;
-  font-size: 1.8rem;
+  margin-top: 2rem;
+  font-size: 1.7rem;
   font-weight: bold;
 }
 
 .textSeven {
-  margin-top: 9.5rem;
+  margin-top: 5.8rem;
   font-size: 2.3rem;
   font-weight: bold;
 }
 
 .elementThree {
   padding: 2.5rem;
-  margin-top: 3rem;
+  padding-bottom: 6.1rem;
+  margin: auto;
+  margin-top: 2.7rem;
   margin-bottom: 5rem;
-  width: 100%;
+  width: 31.5rem;
   height: 16rem;
   border: 0.5rem solid black;
   border-radius: 3rem;
 
   font-size: 1.7rem;
   font-weight: bold;
+  text-align: left;
 }
 
-.elementThree p:last-child {
+.elementThree p:last-of-type {
   margin-top: 1rem;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
 
 .blue-page-element {
+  margin-top: 5rem;
+  text-align: center;
+  color: white;
   position: relative;
   width: 100%;
   height: 55.7rem;
@@ -304,10 +353,24 @@ header {
   overflow: hidden;
 }
 
-.blue-page-element img {
+.text-work {
+  position: relative;
+  z-index: 100;
+  margin-top: 5.8rem;
+  font-size: 1.5rem;
+}
+
+.blue-page-element p:nth-of-type(2) {
+  position: relative;
+  z-index: 100;
+  margin-top: 5rem;
+  font-size: 2.3rem;
+}
+
+.background-blue {
   position: absolute;
-  top: 50rem;
-  z-index: 1;
+  top: 10rem;
+  z-index: 0;
   object-fit: unset;
   transform: rotate(35deg) scale(3);
   animation: movingIn linear 4s forwards infinite;
@@ -319,18 +382,126 @@ header {
   }
 }
 
+.blue-page-element_container {
+  position: relative;
+  z-index: 100;
+  margin: auto;
+  margin-top: 4.5rem;
+  margin-bottom: 3rem;
+  width: 31.5rem;
+  height: 33.2rem;
+  border: 1rem solid black;
+  border-radius: 2rem;
+  background-color: white;
+}
+
+.blue-page-element_container img {
+  width: 23.5rem;
+  height: 15rem;
+  margin-top: 3.9rem;
+}
+
+.blue-page-text {
+  margin-top: 2.5rem;
+  margin-left: 2.5rem;
+  margin-right: 2.5rem;
+  color: black;
+  font-size: 1.6rem;
+  font-weight: bold;
+  text-align: left;
+}
+
 .green-page-element {
+  position: relative;
+  text-align: center;
+  color: white;
   width: 100%;
   height: 88.5rem;
   background-color: #40b9ac;
-  /* overflow: hidden; */
+  overflow: hidden;
 }
 
-.green-page-element img {
-  position: relative;
+.green-page-element .background {
+  position: absolute;
+  top: 10rem;
   z-index: 1;
+  object-fit: unset;
+  transform: rotate(35deg) scale(4);
+  animation: movingInGreen linear 3s forwards infinite;
+}
+
+@keyframes movingInGreen {
+  100% {
+    transform: rotate(35deg) scale(4) translate(-20.5%, 0%);
+  }
+}
+
+.reward-text {
+  position: relative;
+  z-index: 100;
+  margin-top: 6.1rem;
+  font-size: 2.3rem;
+}
+
+.green-page-element_container {
+  position: relative;
+  z-index: 100;
+  margin: 4.5rem auto;
+  height: 35.5rem;
+  width: 31.5rem;
+  border: 1rem solid black;
+  border-radius: 3rem;
+  background-color: white;
+  color: black;
+  text-align: center;
+}
+
+.green-page-container_icon {
+  width: 23.5rem;
+  height: 15rem;
+  margin-top: 3.9rem;
+}
+
+.green-page_text1 {
+  margin-top: 2.2rem;
+  margin-left: 4.6rem;
+  text-align: left;
+  font-size: 1.7rem;
+  font-weight: bold;
+  line-height: 2.8rem;
+}
+
+.green-page_text2 {
+  margin-top: 2.1rem;
+  margin-left: 4.6rem;
+  margin-bottom: 4.2rem;
+  text-align: left;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.install-text {
+  position: relative;
+  z-index: 100;
+  font-size: 1.7rem;
+  font-weight: bold;
+}
+
+.img-container {
+  position: relative;
+  margin: 0 auto;
+  z-index: 100;
+  width: 20.5rem;
+  height: 31.6rem;
+}
+
+.my-img {
+  position: relative;
+  z-index: 100;
+  transform: translateY(2.1rem);
   width: 100%;
   height: 100%;
+  object-fit: contain;
 }
 
 .textEight {
