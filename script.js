@@ -34,21 +34,23 @@ carousel.addEventListener("touchend", dragStop);
 carousel.addEventListener("touchcancel", dragStop);
 carousel.addEventListener("touchmove", dragging);
 
-// window.addEventListener("resize", () => {
-//   if (window.innerWidth <= 50 * 16) {
-//     const webpage = document.querySelector(".webpage");
-//     document.body.removeChild(webpage);
-//   } else {
-//     const webpage = document.querySelector(".webpage");
-//     document.body.appendChild(webpage);
-//   }
-// });
-
+// DISPLAY / HIDE MENU
 const menuBtn = document.querySelectorAll(".menu");
 const navigationMenu = document.querySelector("nav");
 
 menuBtn.forEach((menu) => {
   menu.addEventListener("click", function () {
     navigationMenu.classList.toggle("display-hide");
+  });
+});
+
+// MOVE TO TOP BUTTON
+
+const moveTopBtn = document.querySelector(".right-content");
+
+moveTopBtn.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
   });
 });
