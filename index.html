@@ -1,26 +1,27 @@
 <!DOCTYPE html>
-<html lang="JP">
+<html lang="jp">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <!-- SLIDER LINK -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+  />
     <!-- GOOGLE FONTS IMPORT LINKS -->
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Viga&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;400;800&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Viga&display=swap" rel="stylesheet">
 
     <title>Anytype</title>
 
+    <link rel="stylesheet" href="./styleReset.css">
     <link rel="stylesheet" href="./style.css" />
+
+    <script defer src="https://www.youtube.com/player_api"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script defer src="./script.js"></script>
+
   </head>
   <body>
 
@@ -34,42 +35,41 @@
           />
         </div>
    
-        <div class="anytype-logo-main">
-          <img class="fv" src="./Img/fv.png" alt="anytype text logo" />
-
+        <div class="center">
+          <div class="anytype-logo-main">
+            <img class="fv" src="./Img/fv.png" alt="anytype text logo" />
+            <a href="#" class="aside-left_download-btnMain" target="_blank">
+              <img
+                class="firstMain"
+                src="./Img/downloadIconBlackSVG.svg"
+                alt="download icon"
+              />
+              <img
+                class="secondMain"
+                src="./Img/downloadIconSVG.svg"
+                alt="download icon white"
+              />
+              <span>アプリをインストールする</span>
+            </a>
+          </div>
         </div>
-      
-        <!-- IS IT BETTER TO USE A BTN OR AN ANCHOR FOR THE DOWNLOAD/INSTALL BTN ??? 
         
-        HOW CAN I CENTER EVERYTHING WITHOUT USING FLEX?
-        -->
-        <a href="#" class="aside-left_download-btnMain ">
-          <img
-            class="firstMain"
-            src="./Img/downloadIconBlackSVG.svg"
-            alt="download icon"
-          />
-          <img
-            class="secondMain"
-            src="./Img/downloadIconSVG.svg"
-            alt="download icon white"
-          />
-          <span>アプリをインストール</span>
-        </a>
+     
+        
       </aside>
 
-      <div class="divider">DIVIDER ELEMENT</div>
+      <div class="divider"></div>
 
       <aside>
         <div class="aside-right">
           <span class="aside-right_title">ANYTYPEとは？</span>
           <div class="aside-right_content">
             <p class="right-content-text1">
-              <span class="underline2"
+              <span
                 >キーボード着せ替えアプリとして使<br />
-                える、案件参加ツールアプリです。</p>
+                える、<b class="underline">案件参加ツールアプリ</b>です。</p>
               <span class="right-content-text2">
-                ※利用前に、<span class="blue-underline">キーボード設定</span
+                ※利用前に、<b class="blue-underline"><a href="#">キーボード設定</a></b
                 >する必要があります。
               </span>
             
@@ -100,24 +100,20 @@
           />
           <img
             class="menu-logo1"
-            src="./Img/anytypeIconWhite.png"
+            src="./Img/anytype_logo_white.svg"
             alt="anytype icon white"
-          />
-          <img
-            class="menu-logo2"
-            src="./Img/anytypeIconTextWhite.png"
-            alt="anytype text icon white"
           />
 
           <ul class="menu-voices">
-            <li><a href="#">登録の流れ</a></li>
-            <li><a href="#">ANYTYPEとは?</a></li>
-            <li><a href="#">お仕事の内容は?</a></li>
-            <li><a href="#">報酬内容は?</a></li>
-            <li><a href="#">運営会社</a></li>
-            <li><a href="#">プライバシーポリシー</a></li>
+            <li><a class="menu-voice" id="0">登録の流れ</a></li>
+            <li><a class="menu-voice" id="1">ANYTYPEとは?</a></li>
+            <li><a class="menu-voice" id="2">お仕事の内容は?</a></li>
+            <li><a class="menu-voice" id="3">報酬内容は?</a></li>
+            <li><a class="menu-voice" id="4">運営会社</a></li>
+            <li><a class="menu-voice" id="5">プライバシーポリシー</a></li>
+
           </ul>
-          <a href="#" class="aside-left_download-btn menu-download-btn">
+          <a href="#" class="aside-left_download-btn menu-download-btn" target="_blank>
             <img
               class="first"
               src="./Img/downloadIconBlackSVG.svg"
@@ -128,7 +124,7 @@
               src="./Img/downloadIconSVG.svg"
               alt="download icon white"
             />
-            <span>アプリをインストール</span>
+            <span>アプリをインストールする</span>
           </a>
           <img
             class="elementOne menu-elementOne"
@@ -143,7 +139,7 @@
           src="./Img/backgroundSmall.png"
           alt="iphone img on a blue background"
         />
-        <a href="#" class="aside-left_download-btn">
+        <a href="#" class="aside-left_download-btn" target="_blank>
           <img
             class="first"
             src="./Img/downloadIconBlackSVG.svg"
@@ -154,7 +150,7 @@
             src="./Img/downloadIconSVG.svg"
             alt="download icon white"
           />
-          <span>アプリをインストール</span>
+          <span>アプリをインストールする</span>
         </a>
 
         <img
@@ -162,12 +158,12 @@
           src="./Img/orangeImg.png"
           alt="description text"
         />
-        <p class="textOne">HOW TO USE</p>
+        <h2 class="textOne">HOW TO USE</h2>
         <div class="divider2"></div>
         <p class="textTwo">自宅にいながら好きな時間に！</p>
         <p class="textThree">
-          <span class="underline">スマホ</span><span class="small-text">と</span
-          ><span class="underline">専用アプリ</span
+          <b class="underline">スマホ</b><span class="small-text">と</span
+          ><b class="underline">専用アプリ</b
           ><span class="small-text">で</span><br />すぐに始められる！
         </p>
         <img
@@ -175,48 +171,39 @@
           src="./Img/flowTextIcon.png"
           alt="flow text img"
         />
-        <p class="textFive">登録の流れ</p>
+        <h2 class="textFive" id="target0">登録の流れ</h2>
 
-        <div class="slider-container">
-          <div class="wrapper">
-            <i id="left" class="fa-solid fa-angle-left">
-              <img src="./Img/arrowRight.svg" alt="arrow right">
-            </i>
-            <div class="carousel">
-              <div class="image-container">
-                <p class="textFour">STEP<br /><span>01</span></p>
-                <img
-                  src="./Img/sliderIcon1.png"
-                  alt="draggable"
-                  draggable="false"
-                />
-                <p class="textSix">
-                  モニター専用着せ替えアプリ<br />ANYTYPEのインストール後、<br />キーボード設定をします
-                </p>
-              </div>
-              <div class="image-container">
-                <p class="textFour">STEP<br /><span>02</span></p>
-                <img
-                  src="./Img/sliderIcon2.png"
-                  alt="draggable"
-                  draggable="false"
-                />
-                <p class="textSix">
-                  モニター専用着せ替えアプリ<br />ANYTYPEのインストール後、<br />キーボード設定をします
-                </p>
-              </div>
-            </div>
-            <i id="right" class="fa-solid fa-angle-right">
-              <img src="./Img/arrowRight.svg" alt="arrow right">
-            </i>
+        <!-- Swiper -->
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="image-container">
+            <h3 class="textFour">STEP<br /><span>01</span></h3>
+            <img src="./Img/sliderIcon1.png" alt="draggable" draggable="false" />
+            <p class="textSix">
+              モニター専用着せ替えアプリ<br />ANYTYPEのインストール後、<br />キーボード設定をします
+            </p>
           </div>
         </div>
-        <p class="textSeven">ANYTYPEとは？</p>
+        <div class="swiper-slide">
+          <div class="image-container">
+            <h3 class="textFour">STEP<br /><span>02</span></h3>
+            <img src="./Img/sliderIcon2.png" alt="draggable" draggable="false" />
+            <p class="textSix">
+              モニター専用着せ替えアプリ<br />ANYTYPEのインストール後、<br />キーボード設定をします
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+        <h1 class="textSeven" id="target1">ANYTYPEとは？</h1>
 
         <div class="elementThree">
           <p>
-            キーボード着せ替えアプリとして<br />使える、<span class="underline2"
-              >案件参加ツールアプリ</span
+            キーボード着せ替えアプリとして<br />使える、<b class="underline2"
+              >案件参加ツールアプリ</b
             >です。
           </p>
           <p>
@@ -226,35 +213,35 @@
         </div>
       </div>
 
-      <div class="blue-page-element">
+      <div class="blue-page-element" id="target2">
         <img
           class="background-blue"
           src="./Img/backJobText.png"
           alt="blue background job text"
         />
-        <p class="text-work">WORK AND COMPENSATION</p>
+        <h2 class="text-work" >WORK AND COMPENSATION</h2>
         <div class="divider3"></div>
-        <p>お仕事の内容は?</p>
+        <h3 class="job-content" >お仕事の内容は?</h3>
         <div class="blue-page-element_container">
           <img src="./Img/slideIcon1.png" alt="person holding iphone" />
           <p class="blue-page-text">
-            ご自身のスマホに指定アプリをDL<br />後、<span class="underline2">
-              動作チェックプレイした感<br />想をレポート提出 </span
+            ご自身のスマホに指定アプリをDL<br />後、<b class="underline2">
+              動作チェックプレイした感<br />想をレポート提出 </b
             >するだけ!
           </p>
         </div>
       </div>
-      <div class="green-page-element">
-        <p class="reward-text">報酬内容は?</p>
+      <div class="green-page-element" id="target3">
+        <h3 class="reward-text" >報酬内容は?</h3>
         <div class="greenPage-container">
           <img
             class="greenPage-container_img"
-            src="./Img/slideIcon1.png"
+            src="./Img/rewardIllustration.jpg"
             alt="img"
           />
           <p class="greenPage-container_text1">
-            <span class="greenPage-container_span1 underline2"
-              >ANYTYPEを設定完了</span
+            <b class="greenPage-container_span1 underline2"
+              >ANYTYPEを設定完了</b
             >で
           </p>
           <p class="greenPage-container_text2">
@@ -271,14 +258,26 @@
             >振込は月末締め、翌月末日です。
           </p>
         </div>
-        <p class="install-text">\ インストール手順をご紹介！/</p>
+        <h2 class="install-text"><b class="slash slash1">\</b>　インストール手順をご紹介！　<b class="slash slash2">/</b></h2>
         <div class="img-container">
+
+        
+          <div class="modal-window closed-style">
+            <div class="close-btn"></div>
+            <div id="player"></div>
+          </div>
+
+
           <img class="my-img" src="./img/iphoneHalfIcon.png" alt="iphone img" />
-          <img
+         
+          
+
+          <button class="play-button">
+            <img
             class="play-btn"
             src="./Img/downloadBtnRed.png"
             alt="play button red"
-          />
+          /></button>        
         </div>
 
         <img
@@ -286,13 +285,11 @@
           src="./Img/backRewardText.png"
           alt="background reward text"
         />
-
-        <!-- <img src="./Img/backRewardText.png" alt="blue background job text" /> -->
       </div>
 
       <p class="textEight">今すぐアプリを<br />ダウンロード!</p>
 
-      <a href="#" class="aside-left_download-btn">
+      <a href="#" class="aside-left_download-btn" target="_blank>
         <img
           class="first"
           src="./Img/downloadIconBlackSVG.svg"
@@ -303,7 +300,7 @@
           src="./Img/downloadIconSVG.svg"
           alt="download icon white"
         />
-        <span>アプリをインストール</span>
+        <span>アプリをインストールする</span>
       </a>
 
       <footer>
@@ -314,21 +311,23 @@
               src="./Img/anytypeIconTextColor.png"
               alt="anytype logo color"
           /></span>
-          <p>登録の流れ</p>
-          <p>ANYTYPEとは</p>
-          <p>お仕事内容は?</p>
-          <p>報酬内容は?</p>
-          <p>運営会社</p>
-          <p>プライバシーポリシー</p>
-          <p>2023 ANYTYPE All Rights Reserved.</p>
+          <li><a class="menu-voice" id="0">登録の流れ</a></li>
+            <li><a class="menu-voice" id="1">ANYTYPEとは?</a></li>
+            <li><a class="menu-voice" id="2">お仕事の内容は?</a></li>
+            <li><a class="menu-voice" id="3">報酬内容は?</a></li>
+            <li><a class="menu-voice" id="4">運営会社</a></li>
+            <li><a class="menu-voice" id="5">プライバシーポリシー</a></li>
+          <small>&copy;2023 ANYTYPE All Rights Reserved.</small>
         </div>
         <div class="right-content">
           <img src="./Img/arrowUp.svg" alt="arrow up" />
-          <p class="go-top-btn">TOPに戻る</p>
         </div>
+        
       </footer>
+      
     </main>
-
-    <script src="./script.js"></script>
+    
   </body>
 </html>
+
+
